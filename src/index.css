@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.underline-with-gap {
+  position: relative; /* Required for positioning the underline */
+}
+
+.underline-with-gap::after {
+  content: "";
+  position: absolute;
+  bottom: -3px; /* Adjust this value to control the distance between text and underline */
+  left: 0;
+  width: 10rem; /* Make the underline span the full width of the container */
+  height: 1px; /* Adjust this value to control the thickness of the underline */
+  background-color: #267F93; /* Adjust this color to match your design */
+}
+
+/* Define the styles for the sidebar menu items */
+.sidebar-menu-item {
+  display: block;
+  padding: 8px 16px; /* Adjust padding as needed */
+  text-decoration: none;
+  color: #333; /* Adjust text color as needed */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Define the hover effect */
+.sidebar-menu-item:hover {
+  background-color: #267F93; /* Change to the desired background color on hover */
+  color: #fff; /* Change to the desired text color on hover */
+  transform: scale(1.05); /* Add a subtle scaling effect on hover */
+}
+
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  scroll-snap-align: start;
+}
+
+/* Button styles */
+.carousel-button {
+  background-color: #267F93;
+  color: #fff;
+  padding: 8px 16px;
+  margin-top: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.fixed-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: white; /* Customize the background color as needed */
+  /* Add any other styling you want for the fixed navbar */
+}
+
+.custom-yellow{
+  color:#FF8F00;
+}
+
+.custom-text {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 600px;
+}
