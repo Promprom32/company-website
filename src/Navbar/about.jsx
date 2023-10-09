@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Nav from "../nav";
 import Group from "../assets/group.png";
 import Footer from "../footer";
@@ -14,7 +14,6 @@ import img15 from "../assets/img15.png";
 import img16 from "../assets/img16.png";
 import img17 from "../assets/img17.png";
 import img18 from "../assets/img18.png";
-import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from "react-icons/ai";
 import Testimony from "../testimony";
 const about = () => {
   // Define an array of image sources
@@ -26,6 +25,23 @@ const about = () => {
   // Initialize the current page index
   const [currentPage, setCurrentPage] = useState(0);
 
+  useEffect(() => {
+    // Function to handle automatic scrolling
+    const handleAutoScroll = () => {
+      if (currentPage < images.length / imagesPerPage - 1) {
+        setCurrentPage((prevPage) => prevPage + 1);
+      } else {
+        setCurrentPage(0); // Reset to the first page
+      }
+    };
+
+    // Set up an interval to scroll automatically
+    const intervalId = setInterval(handleAutoScroll, 3000); // Adjust the time interval as needed (e.g., 3000 milliseconds for a 3-second interval)
+
+    // Clean up the interval on component unmount
+    return () => clearInterval(intervalId);
+  }, [currentPage]);
+
   // Calculate the start and end index of the images to display
   const startIndex = currentPage * imagesPerPage;
   const endIndex = startIndex + imagesPerPage;
@@ -33,16 +49,6 @@ const about = () => {
   // Get the subset of images to display on the current page
   const displayedImages = images.slice(startIndex, endIndex);
 
-  // Function to handle the next button click
-  const handleNextClick = () => {
-    if (endIndex < images.length) {
-      setCurrentPage((prevPage) => prevPage + 1);
-    }
-  };
-  // Function to handle the previous button click
-  const handlePrevClick = () => {
-    setCurrentPage((prevPage) => Math.max(prevPage - 1, 0));
-  };
   const testimonials = [
     "working with barnksforte technologies limited has been a game changer for us. their innovative solutions and attention to detials have helped us acheive our goals faster than we have ever imagined.",
     "Client testimonial 2 text goes here.",
@@ -131,19 +137,7 @@ const about = () => {
                 <img src={image} alt={`logo ${index}`} />
               </div>
             ))}
-            <button
-              onClick={handlePrevClick}
-              className="absolute text-2xl left-2 transform -translate--1/2  text-white py-2 px-4 rounded-l bg-[#D6D6D6]"
-            >
-              {" "}
-              <AiOutlineDoubleLeft />{" "}
-            </button>
-            <button
-              onClick={handleNextClick}
-              className="absolute text-2xl right-2 transform -translate-y-1/2 text-white py-2 px-4 rounded-l bg-[#D6D6D6]"
-            >
-              <AiOutlineDoubleRight />
-            </button>
+           
           </div>
         </div>
       </div>

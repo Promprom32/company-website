@@ -16,12 +16,15 @@ function ContactModal({ isOpen, onClose }) {
       <div className="flex items-center justify-center h-screen">
         <div
           className="bg-white p-8 rounded-lg shadow-md relative"
-          style={{ width: "50rem", height: "25rem" }}
+          style={{ width: "50rem", height: "32rem" }}
         >
           <div className="flex justify-between">
             <div></div>
-            <div className="bg-[#636768] text-[#fff] rounded-full">
-              <button className="  hover:text-gray-800" onClick={onClose}>
+            <div className="">
+              <button
+                className="bg-[#636768] text-[#fff]  w-12 h-12 rounded-full items-center  px-2 py-2 text-3xl"
+                onClick={onClose}
+              >
                 <AiOutlineClose />
               </button>
             </div>
@@ -32,32 +35,63 @@ function ContactModal({ isOpen, onClose }) {
             <div className="flex justify-center" style={{ flex: 3 }}>
               <form>
                 {/* Form fields */}
-                <h2 className="text-2xl font-semibold mb-4 text-center capitalize">
+                <h2 className="text-2xl font-semibold mb-4 text-center capitalize text-[#323434]">
                   get in touch
                 </h2>
-                <p className="text-center capitalize">
+                <p className="text-center capitalize mb-4 text-black text-1xl font-bold">
                   feel free to drop us a line
                 </p>
 
-                <div className="mb-4 flex flex-col">
+                <div className="mb-4 flex flex-col gap-4">
                   <input
                     type="text"
                     id="name"
                     name="name"
                     required
-                    placeholder="your full name"
+                    placeholder="Your Full Name"
                     className="bg-[#F3F3F3] outline-none w-96 h-10 px-3 border-none"
                   />
-                  <input type="text" id="name" name="name" required />
-                  <input type="text" id="name" name="name" required />
-                  <input type="text" id="name" name="name" required />
+                  <div className="flex space-x-4">
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Email"
+                      required
+                      className="bg-[#F3F3F3] outline-none w-45 h-10 px-3 border-none"
+                    />
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      placeholder="Password"
+                      className="bg-[#F3F3F3] outline-none w-40 h-10 px-3 border-none"
+                    />
+                  </div>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Subject"
+                    className="bg-[#F3F3F3] outline-none w-96 h-10 px-3 border-none"
+                  />
+                  <textarea
+                    name="name"
+                    id="name"
+                    cols="30"
+                    rows="10"
+                    className="bg-[#F3F3F3] outline-none w-96 h-16 px-3 border-none"
+                    placeholder="Type Your Message Here"
+                  ></textarea>
                 </div>
                 {/* Add more form fields as needed */}
                 <button
                   type="submit"
-                  className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none"
+                  className=" w-96 bg-[#3AC1EF]  text-white text-center font-semibold py-2 px-4 rounded focus:outline-none"
                 >
-                  Submit
+                  Send
                 </button>
               </form>
             </div>
@@ -69,13 +103,13 @@ function ContactModal({ isOpen, onClose }) {
               </h3>
               <div className="flex items-center gap-6">
                 <div>
-                  <SlLocationPin />
+                  <SlLocationPin className="text-white text-2l" />
                 </div>
-                <div className="text-2l capitalize">
-                  <p>4 macenta close, wuse ii, abuja</p>
+                <div className="text-2l capitalize text-[#F3F3F3]">
+                  <p>4 macenta close, wuse II, abuja</p>
                 </div>
               </div>
-              <div className="flex items-center gap-6">
+              <div className="flex items-center gap-6 text-[#F3F3F3]">
                 <div>
                   <AiOutlineMail />
                 </div>
@@ -83,27 +117,27 @@ function ContactModal({ isOpen, onClose }) {
                   <p>info@barnksfortetech.com</p>
                 </div>
               </div>
-              <div className="flex  gap-6">
+              <div className="flex items-center gap-6">
                 <div>
-                  <AiOutlineWhatsApp className="bg-white font-bold" />
+                  <AiOutlineWhatsApp className="text-[#F3F3F3] font-bold" />
                 </div>
-                <div className="items-center">
+                <div className="items-center text-2l text-[#F3F3F3]">
                   <p>09043712482</p>
                 </div>
               </div>
             </div>
 
-            <div className="flex justify-between">
-              <div>
+            <div className="flex justify-center  gap-5">
+              <div className="text-white">
                 <AiOutlineInstagram />
               </div>
-              <div>
+              <div className="text-white">
                 <AiFillFacebook />
               </div>
-              <div>
+              <div className="text-white">
                 <RiTwitterXLine />
               </div>
-              <div>
+              <div className="text-white">
                 <AiFillLinkedin />
               </div>
             </div>

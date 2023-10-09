@@ -117,15 +117,6 @@ const nav = () => {
                   <div className="absolute z-10 left-0 mt-2 space-y-2 bg-[#3ABFED] text-white border rounded-lg w-48 items-center">
                     <div className="flex flex-col items-center">
                       <Link
-                        to="/teams"
-                        className={` block px-4 py-2 border-b  ${
-                          activeMenuItem === "teams" ? "text-[#267F93]" : ""
-                        }`}
-                        onClick={() => handleMenuItemClick("boards")}
-                      >
-                        Board
-                      </Link>
-                      <Link
                         to="/management"
                         className={` block px-4 py-2 border-b  ${
                           activeMenuItem === "management"
@@ -136,6 +127,16 @@ const nav = () => {
                       >
                         Management Staff
                       </Link>
+                      <Link
+                        to="/boards"
+                        className={` block px-4 py-2 border-b  ${
+                          activeMenuItem === "teams" ? "text-[#267F93]" : ""
+                        }`}
+                        onClick={() => handleMenuItemClick("boards")}
+                      >
+                        Board
+                      </Link>
+
                       <Link
                         to="/roles"
                         className={` block px-4 py-2  border-b ${

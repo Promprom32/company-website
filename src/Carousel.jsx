@@ -46,36 +46,33 @@ const Carousel = () => {
             }`}
           >
             {/* Background color or texture */}
-            <div className="w-full h-full bg-gray-700 bg-opacity-75 absolute"></div>
+            <div className="w-full h-full bg-gray-900 bg-opacity-75 absolute"></div>
             <img
               src={image}
               alt={`Image ${index + 1}`}
               className="h-full w-full object-cover"
             />
             {/* Text content */}
-            <div className="text-white text-center top-72 absolute md:top-1/2 md:left-1/2 md:transform md:-translate-y-1/2 lg:block">
-              <h1 className="sm:text-1xl md:text-4xl lg:text-4xl font-semibold">
-                <span
-                  className="bg-[#267F93] text-6xl font-semibold py-3 px-6 sm:text-1xl "
-                  style={{ letterSpacing: "0.2rem" }}
-                >
+            <div className="text-white top-0 absolute md:top-1/2 md:left-1/2 md:transform md:-translate-y-1/2 py-4 px-4">
+              <h1 className="sm:text-1xl md:text-4xl ">
+                <span className="bg-[#2B85A1] text-5xl font-semibold py-1 px-2 sm:text-1xl ">
                   BARNKSFORTE
                 </span>{" "}
-                <br />
-                <span
-                  style={{ letterSpacing: "0.3rem" }}
-                  className="sm:text-1xl"
-                >
-                  TECHNOLOGIES LIMITED
-                </span>
               </h1>
-              <p
-                className="text-lg md:text-xl lg:text-2xl text-[#267F93] font-semibold mt-4"
-                style={{ letterSpacing: "0.3rem" }}
-              >
+              <p>
+                <span className="text-5xl py-3 px-2 sm:text-1xl mt-2">
+                  TECHNOLOGIES
+                </span>
+              </p>
+              <p>
+                <span className="text-5xl py-3 px-2 sm:text-1xl mt-2 uppercase">
+                  limited
+                </span>
+              </p>
+              <p className="text-lg md:text-xl lg:text-2xl text-[#2B85A1] font-semibold mt-4">
                 Your Reliable Solution Partner
               </p>
-              <div className="flex justify-center space-x-4 md:space-x-2 mt-4">
+              <div className="flex justify-left space-x-4 md:space-x-2 mt-4">
                 <img src={Bio} alt="biometrics" />
                 <img src={Code} alt="coding" />
                 <img src={Internet} alt="internet" />
