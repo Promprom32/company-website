@@ -18,7 +18,7 @@ const products = () => {
       <Nav />
       <div
         className="bg-[#3AC1EF] border"
-        style={{ padding: "1rem", paddingLeft: "5rem" }}
+        style={{ padding: "1rem", paddingLeft: "3rem" }}
       >
         <h3 className="text-4l uppercase text-[#fff] font-semibold">
           our products

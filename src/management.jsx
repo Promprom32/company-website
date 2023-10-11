@@ -9,7 +9,7 @@ const management = () => {
   return (
     <div>
       <Nav />
-      <div className="flex gap-3 justify-center">
+      <div className="flex gap-3 justify-center mt-5">
         <div>
           <img src={Fruit} alt="fruit-logo" />
         </div>
@@ -19,7 +19,7 @@ const management = () => {
       </div>
       <div>
         <div>
-          <div className="flex  p-24 space-x-14">
+          <div className="flex  p-10 space-x-14">
             <div>
               <img
                 src={Verxid}
@@ -60,7 +60,7 @@ const management = () => {
         </div>
         {/* mr adedayo */}
         <div>
-          <div className="flex  p-24 space-x-14">
+          <div className="flex  p-10 space-x-14">
             <div>
               <img
                 src={Verxid}
@@ -103,7 +103,7 @@ const management = () => {
         </div>
         {/* mrs toyin */}
         <div>
-          <div className="flex  p-24 space-x-14">
+          <div className="flex  p-10 space-x-14">
             <div>
               <img
                 src={Verxid}
@@ -145,7 +145,7 @@ const management = () => {
         </div>
         {/* bukola */}
         <div>
-          <div className="flex  p-24 space-x-14">
+          <div className="flex  p-10 space-x-14">
             <div>
               <img
                 src={Verxid}
@@ -187,7 +187,7 @@ const management = () => {
         </div>
         {/* kentebe */}
         <div>
-          <div className="flex  p-24 space-x-14">
+          <div className="flex  p-10 space-x-14">
             <div>
               <img
                 src={Verxid}
@@ -229,7 +229,7 @@ const management = () => {
         </div>
         {/* sandra golen */}
         <div>
-          <div className="flex  p-24 space-x-14">
+          <div className="flex  p-5 space-x-14">
             <div>
               <img
                 src={Verxid}

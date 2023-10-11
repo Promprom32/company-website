@@ -9,17 +9,17 @@ const Boards = () => {
   return (
     <div>
       <Nav/>
-      <div className="flex gap-3 justify-center">
+      <div className="flex gap-3  mt-5 justify-center">
         <div>
           <img src={Fruit} alt="fruit-logo" />
         </div>
         <div className="capitalize text-3xl text-[#2C2E2E] font-semibold">
-          <h3>management staff</h3>
+          <h3>board of directors</h3>
         </div>
       </div>
       <div>
         <div>
-          <div className="flex  p-24 space-x-14">
+          <div className="flex  p-10 space-x-14">
             <div>
               <img
                 src={Verxid}
@@ -60,7 +60,7 @@ const Boards = () => {
         </div>
         {/* mr adedayo */}
         <div>
-          <div className="flex  p-24 space-x-14">
+          <div className="flex  p-10 space-x-14">
             <div>
               <img
                 src={Verxid}
@@ -103,7 +103,7 @@ const Boards = () => {
         </div>
         {/* mrs toyin */}
         <div>
-          <div className="flex  p-24 space-x-14">
+          <div className="flex  p-10 space-x-14">
             <div>
               <img
                 src={Verxid}
@@ -145,7 +145,7 @@ const Boards = () => {
         </div>
         {/* bukola */}
         <div>
-          <div className="flex  p-24 space-x-14">
+          <div className="flex  p-10 space-x-14">
             <div>
               <img
                 src={Verxid}
@@ -187,7 +187,7 @@ const Boards = () => {
         </div>
         {/* kentebe */}
         <div>
-          <div className="flex  p-24 space-x-14">
+          <div className="flex  p-10 space-x-14">
             <div>
               <img
                 src={Verxid}
@@ -229,7 +229,7 @@ const Boards = () => {
         </div>
         {/* sandra golen */}
         <div>
-          <div className="flex  p-24 space-x-14">
+          <div className="flex  p-10 space-x-14">
             <div>
               <img
                 src={Verxid}

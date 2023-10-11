@@ -4,6 +4,8 @@ import Card2 from "./assets/card2.png";
 import Card3 from "./assets/card3.png";
 import Card4 from "./assets/card4.png";
 import Card5 from "./assets/card5.png";
+import Dayo1 from "./assets/dayo1.jpg";
+import Dayo2 from "./assets/dayo2.jpg";
 import Fruit from "./assets/fruits.png";
 import Footer from "./footer";
 import Nav from "./nav";
@@ -11,7 +13,7 @@ import "../src/index.css";
 import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from "react-icons/ai";
 const events = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const images = [Card1, Card2, Card3]; // Add more image filenames as needed
+  const images = [Card3, Card3, Card3]; // Add more image filenames as needed
   const imageContent = [
     {
       heading: "touchless biometric system",
@@ -66,7 +68,23 @@ const events = () => {
   return (
     <div className="relative">
       <Nav />
-      <div className="w-full h-screen overflow-hidden relative">
+      <div
+        className="bg-[#3AC1EF]"
+        style={{ padding: "1rem", paddingLeft: "3rem" }}
+      >
+        <h3 className="text-3l capitalize text-[#fff] font-semibold">
+          company
+        </h3>
+      </div>
+      <div>
+        <h3
+          className="text-4l capitalize text-[#3AC1EF] font-bold"
+          style={{ paddingLeft: "3rem", marginTop: "2rem" }}
+        >
+          news
+        </h3>
+      </div>
+      <div className="w-full h-screen overflow-hidden relative mb-5 p-10">
         {images.map((image, index) => (
           <div
             key={index}
@@ -83,7 +101,7 @@ const events = () => {
             />
             {/* Text content */}
             <div className="w-full h-full bg-gray-900 bg-opacity-75 absolute"></div>
-            <div className="text-white absolute md:left-1/4 md:-bottom-1  mb-6 lg:block">
+            <div className="text-white absolute md:left-1/4 md:bottom-28  mb-6 lg:block">
               <h3 className="text-[#3AC1EF] custom-text text-3xl capitalize">
                 {imageContent[index].heading}
               </h3>

@@ -30,7 +30,7 @@ const nav = () => {
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [companyDropdownOpen, setCompanyDropdownOpen] = useState(false);
   return (
-    <div>
+    <div >
       <div>
         {/* Sidebar for small screens */}
         <div
@@ -73,7 +73,7 @@ const nav = () => {
         {/* Main navigation bar */}
         <div
           className="fixed top-0 left-0 right-0 z-50 pl-10 w-full bg-white items-center flex justify-between p-4 "
-          style={{ zIndex: 50 }}
+          style={{ zIndex: 9999, height:"60px" }}
         >
           <div className="flex-shrink-0">
             <img src={BGL} alt="barnksforte" className="h-12" />
@@ -117,7 +117,7 @@ const nav = () => {
                   <div className="absolute z-10 left-0 mt-2 space-y-2 bg-[#3ABFED] text-white border rounded-lg w-48 items-center">
                     <div className="flex flex-col items-center">
                       <Link
-                        to="/management"
+                        to="/company/management"
                         className={` block px-4 py-2 border-b  ${
                           activeMenuItem === "management"
                             ? "text-[#267F93]"
@@ -128,17 +128,17 @@ const nav = () => {
                         Management Staff
                       </Link>
                       <Link
-                        to="/boards"
+                        to="/company/boards"
                         className={` block px-4 py-2 border-b  ${
-                          activeMenuItem === "teams" ? "text-[#267F93]" : ""
+                          activeMenuItem === "board" ? "text-[#267F93]" : ""
                         }`}
-                        onClick={() => handleMenuItemClick("boards")}
+                        onClick={() => handleMenuItemClick("board")}
                       >
                         Board
                       </Link>
 
                       <Link
-                        to="/roles"
+                        to="/company/roles"
                         className={` block px-4 py-2  border-b ${
                           activeMenuItem === "teams" ? "text-[#267F93]" : ""
                         }`}
@@ -147,7 +147,7 @@ const nav = () => {
                         Teams
                       </Link>
                       <Link
-                        to="/events"
+                        to="/company/events"
                         className={` block px-4 py-2 ${
                           activeMenuItem === "events" ? "text-[#267F93]" : ""
                         }`}
@@ -174,7 +174,7 @@ const nav = () => {
                 <div className="absolute z-10 left-0 mt-2 space-y-2 bg-[#3ABFED] text-white border rounded-lg w-48 items-center">
                   <div className="flex flex-col items-center">
                     <Link
-                      to="/career"
+                      to="/career/career"
                       className={` block px-4 py-2 border-b ${
                         activeMenuItem === "career" ? "text-[#267F93]" : ""
                       }`}
@@ -211,7 +211,7 @@ const nav = () => {
                 <div className="absolute z-10 left-0 mt-2 space-y-2 bg-[#3ABFED] text-white border rounded w-48 items-center">
                   <div className="flex flex-col items-center">
                     <Link
-                      to="/priority"
+                      to="/services/priority"
                       className={` block px-4 py-2 border-b ${
                         activeMenuItem === "priority" ? "text-[#267F93]" : ""
                       }`}
@@ -221,7 +221,7 @@ const nav = () => {
                     </Link>
 
                     <Link
-                      to="/enterprise"
+                      to="/services/enterprise"
                       className={` block px-4 py-2 border-b ${
                         activeMenuItem === "enterprise system"
                           ? "text-[#267F93]"
@@ -232,7 +232,7 @@ const nav = () => {
                       Enterprise System
                     </Link>
                     <Link
-                      to="/products"
+                      to="/services/products"
                       className={` block px-4 py-2 border-b ${
                         activeMenuItem === "products" ? "text-[#267F93]" : ""
                       }`}

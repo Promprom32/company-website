@@ -1,7 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body{
+  padding-top: 60px;
+}
 .underline-with-gap {
   position: relative; /* Required for positioning the underline */
 }
@@ -13,7 +21,7 @@
   left: 0;
   width: 10rem; /* Make the underline span the full width of the container */
   height: 1px; /* Adjust this value to control the thickness of the underline */
-  background-color: #267F93; /* Adjust this color to match your design */
+  background-color: #267f93; /* Adjust this color to match your design */
 }
 
 /* Define the styles for the sidebar menu items */
@@ -27,7 +35,7 @@
 
 /* Define the hover effect */
 .sidebar-menu-item:hover {
-  background-color: #267F93; /* Change to the desired background color on hover */
+  background-color: #267f93; /* Change to the desired background color on hover */
   color: #fff; /* Change to the desired text color on hover */
   transform: scale(1.05); /* Add a subtle scaling effect on hover */
 }
@@ -45,7 +53,7 @@
 
 /* Button styles */
 .carousel-button {
-  background-color: #267F93;
+  background-color: #267f93;
   color: #fff;
   padding: 8px 16px;
   margin-top: 8px;
@@ -63,8 +71,8 @@
   /* Add any other styling you want for the fixed navbar */
 }
 
-.custom-yellow{
-  color:#FF8F00;
+.custom-yellow {
+  color: #ff8f00;
 }
 
 .custom-text {
@@ -72,4 +80,48 @@
   word-wrap: break-word;
   overflow-wrap: break-word;
   max-width: 600px;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+.image-carousel-container {
+  overflow: hidden;
+  padding: 20px 0;
+  position: relative;
+}
+.image-carousel-container:hover .image-carousel {
+  animation-play-state: paused;
+}
+
+.image-carousel-container::before,
+.image-carousel-container::after {
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.image-carousel-container::before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), #fff);
+}
+.image-carousel-container::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), #fff);
+}
+.image-carousel {
+  animation: 40s slide infinite linear;
+}
+.image-carousel img {
+  height: 40px;
+  margin: 0 20px;
 }

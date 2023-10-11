@@ -1,27 +1,42 @@
-import React, { useState } from "react";
-import Verxid from "./assets/verxid.png";
+import React, { useState, useEffect } from "react";
 import Fruit from "./assets/fruits.png";
+import Verxid from "./assets/verxid.png";
+import Img5 from "./assets/img5.png";
+import Img6 from "./assets/img6.png";
+import Img7 from "./assets/img7.png";
+import Img8 from "./assets/img8.png";
+import Img9 from "./assets/img9.png";
+import Img10 from "./assets/img10.png";
+import Img11 from "./assets/img11.png";
+import Img12 from "./assets/img12.png";
 import { Link } from "react-router-dom";
-import img5 from "./assets/img5.png";
-import img6 from "./assets/img6.png";
-import img7 from "./assets/img7.png";
-import img8 from "./assets/img8.png";
-import img9 from "./assets/img9.png";
-import img10 from "./assets/img10.png";
-import img11 from "./assets/img11.png";
-import img12 from "./assets/img12.png";
-import "../src/index.css";
-import { AiOutlineDoubleRight } from "react-icons/ai";
-import { AiOutlineDoubleLeft } from "react-icons/ai";
-const verxid = () => {
-  // Define an array of image sources
-  const images = [img5, img6, img7, img8, img9, img10, img11, img12];
 
-  // Define the number of images to display at a time
-  const imagesPerPage = 4;
+// Define an array of image sources
+const images = [Img5, Img6, Img7, Img8, Img9, Img10, Img11, Img12];
 
+// Define the number of images to display at a time
+const imagesPerPage = 4;
+
+function ImageCarousel() {
   // Initialize the current page index
   const [currentPage, setCurrentPage] = useState(0);
+
+  useEffect(() => {
+    // Function to handle automatic scrolling
+    const handleAutoScroll = () => {
+      if (currentPage < images.length / imagesPerPage - 1) {
+        setCurrentPage((prevPage) => prevPage + 1);
+      } else {
+        setCurrentPage(0); // Reset to the first page
+      }
+    };
+
+    // Set up an interval to scroll automatically
+    const intervalId = setInterval(handleAutoScroll, 3000); // Adjust the time interval as needed (e.g., 3000 milliseconds for a 3-second interval)
+
+    // Clean up the interval on component unmount
+    return () => clearInterval(intervalId);
+  }, [currentPage]);
 
   // Calculate the start and end index of the images to display
   const startIndex = currentPage * imagesPerPage;
@@ -30,16 +45,6 @@ const verxid = () => {
   // Get the subset of images to display on the current page
   const displayedImages = images.slice(startIndex, endIndex);
 
-  // Function to handle the next button click
-  const handleNextClick = () => {
-    if (endIndex < images.length) {
-      setCurrentPage((prevPage) => prevPage + 1);
-    }
-  };
-  // Function to handle the previous button click
-  const handlePrevClick = () => {
-    setCurrentPage((prevPage) => Math.max(prevPage - 1, 0));
-  };
   return (
     <div>
       <div className="bg-white w-full h-full">
@@ -95,56 +100,21 @@ const verxid = () => {
           our clients
         </h2>
       </div>
-      {/* <div className="flex justify-between">
-        <div>
-          <img src={img5} alt="npc logo" />
-        </div>
-        <div>
-          <img src={img6} alt="unicef logo" />
-        </div>
-        <div>
-          <img src={img7} alt="nimc logo" />
-        </div>
-        <div>
-          <img src={img8} alt="jamb logo" />
-        </div>
-        <div>
-          <img src={img9} alt="naseni logo" />
-        </div>
-        <div>
-          <img src={img10} alt="plateau logo" />
-        </div>
-        <div>
-          <img src={img11} alt="kogi logo" />
-        </div>
-        <div>
-          <img src={img12} alt="oyo logo" />
-        </div>
-      </div> */}
       <div className="flex flex-col items-center relative">
         <div className="flex justify-between w-full">
           {displayedImages.map((image, index) => (
             <div key={index}>
-              <img src={image} alt={`logo ${index}`} />
+              <img
+                src={image}
+                alt={`logo ${index}`}
+                className="w-50 h-20 object-contain"
+              />
             </div>
           ))}
-          <button
-            onClick={handlePrevClick}
-            className="absolute text-2xl left-0 transform -translate--1/2 text-white py-2 px-4 rounded-l bg-[#D6D6D6]"
-          >
-            {" "}
-            <AiOutlineDoubleLeft />{" "}
-          </button>
-          <button
-            onClick={handleNextClick}
-            className="absolute text-2xl right-0 transform -translate-y-1/2 text-white py-2 px-4 rounded-l bg-[#D6D6D6]"
-          >
-            <AiOutlineDoubleRight />
-          </button>
         </div>
       </div>
     </div>
   );
-};
+}
 
-export default verxid;
+export default ImageCarousel;

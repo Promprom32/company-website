@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Nav from "../nav";
 import Group from "../assets/group.png";
 import Footer from "../footer";
@@ -15,39 +15,10 @@ import img16 from "../assets/img16.png";
 import img17 from "../assets/img17.png";
 import img18 from "../assets/img18.png";
 import Testimony from "../testimony";
+import "../../src/index.css";
 const about = () => {
   // Define an array of image sources
   const images = [img5, img6, img7, img13, img14, img15, img16, img17, img18];
-
-  // Define the number of images to display at a time
-  const imagesPerPage = 3;
-
-  // Initialize the current page index
-  const [currentPage, setCurrentPage] = useState(0);
-
-  useEffect(() => {
-    // Function to handle automatic scrolling
-    const handleAutoScroll = () => {
-      if (currentPage < images.length / imagesPerPage - 1) {
-        setCurrentPage((prevPage) => prevPage + 1);
-      } else {
-        setCurrentPage(0); // Reset to the first page
-      }
-    };
-
-    // Set up an interval to scroll automatically
-    const intervalId = setInterval(handleAutoScroll, 3000); // Adjust the time interval as needed (e.g., 3000 milliseconds for a 3-second interval)
-
-    // Clean up the interval on component unmount
-    return () => clearInterval(intervalId);
-  }, [currentPage]);
-
-  // Calculate the start and end index of the images to display
-  const startIndex = currentPage * imagesPerPage;
-  const endIndex = startIndex + imagesPerPage;
-
-  // Get the subset of images to display on the current page
-  const displayedImages = images.slice(startIndex, endIndex);
 
   const testimonials = [
     "working with barnksforte technologies limited has been a game changer for us. their innovative solutions and attention to detials have helped us acheive our goals faster than we have ever imagined.",
@@ -58,7 +29,7 @@ const about = () => {
     <div>
       <Nav />
       <div>
-        <img src={BG} alt="group photo" className="object-contain" />
+        <img src={BG} alt="group photo" className="object-contain mt-10" />
       </div>
       <div>
         <div className="flex justify-center space-x-4 font-semibold text-3xl mt-10">
@@ -121,7 +92,10 @@ const about = () => {
           <h2 className="text-[#2D2B2B]"> What Our Clients Say About Us</h2>
         </div>
         <div className="container justify-center p-4 mt-5">
-          <Testimony testimonials={testimonials} className="custom-text"/>
+          <Testimony
+            testimonials={testimonials}
+            className="custom-text"
+          />
         </div>
       </div>
 
@@ -130,14 +104,20 @@ const about = () => {
           <img src={Fruit} alt="fruit logo" className="object-contain w-15" />
           <h2 className="text-[#2D2B2B]"> Our Partners</h2>
         </div>
-        <div className="flex flex-col items-center relative p-10">
-          <div className="flex justify-between w-full">
-            {displayedImages.map((image, index) => (
+        <div className="image-carousel-container flex justify-center">
+          <div className="image-carousel flex justify-center">
+            {images.map((image, index) => (
               <div key={index}>
                 <img src={image} alt={`logo ${index}`} />
               </div>
             ))}
-           
+          </div>
+          <div className="image-carousel flex justify-center">
+            {images.map((image, index) => (
+              <div key={index}>
+                <img src={image} alt={`logo ${index}`} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
