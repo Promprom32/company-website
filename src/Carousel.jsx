@@ -46,33 +46,42 @@ const Carousel = () => {
             }`}
           >
             {/* Background color or texture */}
-            <div className="w-full h-full bg-gray-900 bg-opacity-75 absolute"></div>
+            <div className="w-full h-full  bg-[#110F15] bg-opacity-25 absolute"></div>
             <img
               src={image}
               alt={`Image ${index + 1}`}
               className="h-full w-full object-cover"
             />
             {/* Text content */}
-            <div className="text-white top-0 absolute md:top-1/2 md:left-1/2 md:transform md:-translate-y-1/2 py-4 px-4">
+            <div className=" top-0 absolute md:top-1/2 md:left-1/2 md:transform md:-translate-y-1/2 py-4 px-4">
               <h1 className="sm:text-1xl md:text-4xl ">
-                <span className="bg-[#2B85A1] text-5xl font-semibold py-1 px-2 sm:text-1xl ">
+                <span
+                  className="bg-[#2783A1] text-5xl font-semibold py-5 px-6 sm:text-1xl  text-white"
+                  style={{ letterSpacing: "0.3rem" }}
+                >
                   BARNKSFORTE
                 </span>{" "}
               </h1>
               <p>
-                <span className="text-5xl py-3 px-2 sm:text-1xl mt-2">
-                  TECHNOLOGIES
-                </span>
+                <span
+                  className="flex flex-col text-5xl font-semibold py-4 px-3 sm:text-1xl ml-3 uppercase text-white"
+                  style={{ letterSpacing: "0.3rem", marginTop:"0.3rem" }}
+                >
+                  technologies
+                </span>{" "}
               </p>
               <p>
-                <span className="text-5xl py-3 px-2 sm:text-1xl mt-2 uppercase">
+                <span
+                  className="flex flex-col text-5xl font-semibold py-4 px-3 sm:text-1xl ml-4 mb-2 uppercase text-white"
+                  style={{ letterSpacing: "0.3rem" }}
+                >
                   limited
-                </span>
+                </span>{" "}
               </p>
-              <p className="text-lg md:text-xl lg:text-2xl text-[#2B85A1] font-semibold mt-4">
+              <p className="text-lg md:text-xl lg:text-2xl text-[#2B85A1] ml-7 font-semibold flex flex-col">
                 Your Reliable Solution Partner
               </p>
-              <div className="flex justify-left space-x-4 md:space-x-2 mt-4">
+              <div className="flex justify-left space-x-4 md:space-x-2 mt-4 ml-6">
                 <img src={Bio} alt="biometrics" />
                 <img src={Code} alt="coding" />
                 <img src={Internet} alt="internet" />
@@ -83,15 +92,15 @@ const Carousel = () => {
         ))}
         <button
           onClick={prevSlide}
-          className="absolute top-1/2 left-0 transform -translate-y-1/2 text-white py-2 px-4 rounded-l hover:bg-gray-600"
+          className="absolute top-1/2 left-0 transform -translate-y-1/2 text-white py-2 px-4 rounded-l"
         >
-          <AiOutlineDoubleLeft className="text-4xl text-white" />
+          <AiOutlineDoubleLeft className="text-5xl text-white hover:text-[#110F15]"  />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute top-1/2 right-0 transform -translate-y-1/2 text-white py-2 px-4 rounded-r hover:bg-gray-600"
+          className="absolute top-1/2 right-0 transform -translate-y-1/2 text-white py-2 px-4 rounded-r"
         >
-          <AiOutlineDoubleRight className="text-4xl text-white" />
+          <AiOutlineDoubleRight className="text-5xl text-white hover:text-[#110F15]" />
         </button>
       </div>
     </div>

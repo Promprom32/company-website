@@ -16,6 +16,7 @@ import img17 from "../assets/img17.png";
 import img18 from "../assets/img18.png";
 import Testimony from "../testimony";
 import "../../src/index.css";
+import { Link } from "react-router-dom";
 const about = () => {
   // Define an array of image sources
   const images = [img5, img6, img7, img13, img14, img15, img16, img17, img18];
@@ -37,7 +38,7 @@ const about = () => {
           <h2 className="text-[#2D2B2B]">Who We Are</h2>
         </div>
         <div>
-          <div className="text-[#2D2B2B] capitalize mt-2 p-20">
+          <div className="text-[#2D2B2B] capitalize mt-2 p-12">
             {" "}
             <p>
               barnksforte technologies limited (BTL) is a subsidiary of
@@ -59,7 +60,7 @@ const about = () => {
             </p>
           </div>
         </div>
-        <div className="flex p-20   text-2l text-[#2D2B2B] capitalize">
+        <div className="flex p-12   text-2l text-[#2D2B2B] capitalize">
           <div>
             <img src={BGL} alt="barnksforte-group-photo" />
           </div>
@@ -80,7 +81,7 @@ const about = () => {
             </p>
             <div className=" ">
               <button className="bg-[#2C2E2E] text-[#fff] shadow-2xl font-bold py-2 px-8 rounded mt-5">
-                Join Us
+                <Link to="/career/career">Join Us</Link>
               </button>
             </div>
           </div>
@@ -92,10 +93,7 @@ const about = () => {
           <h2 className="text-[#2D2B2B]"> What Our Clients Say About Us</h2>
         </div>
         <div className="container justify-center p-4 mt-5">
-          <Testimony
-            testimonials={testimonials}
-            className="custom-text"
-          />
+          <Testimony testimonials={testimonials} className="custom-text" />
         </div>
       </div>
 

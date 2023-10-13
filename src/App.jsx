@@ -8,6 +8,7 @@ import Management from "./management";
 import Boards from "./Boards";
 import Events from "./events";
 import Career from "./career";
+import Quality from "./quality";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const App = () => {
   return (
@@ -23,6 +24,8 @@ const App = () => {
           <Route path="/company/boards" element={<Boards />} />
           <Route path="/company/events" element={<Events />} />
           <Route path="/career/career" element={<Career />} />
+
+          <Route path="/career/quality" element={<Quality />} />
         </Routes>
       </Router>
     </div>

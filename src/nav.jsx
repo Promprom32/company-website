@@ -76,7 +76,7 @@ const nav = () => {
           style={{ zIndex: 9999, height:"60px" }}
         >
           <div className="flex-shrink-0">
-            <img src={BGL} alt="barnksforte" className="h-12" />
+            <img src={BGL} alt="barnksforte" className="h-16 w-50 object-contain" />
           </div>
           <div
             className={`hidden md:flex space-x-9 justify-center font-semibold text-[#717576] ${
@@ -114,7 +114,7 @@ const nav = () => {
                   <RiArrowDropDownLine className="inline-block ml-0 text-gray-500" />
                 </span>
                 {companyDropdownOpen && (
-                  <div className="absolute z-10 left-0 mt-2 space-y-2 bg-[#3ABFED] text-white border rounded-lg w-48 items-center">
+                  <div className="absolute z-10 left-0 mt-2 space-y-2 bg-[#3AC1EF] text-white border rounded-lg w-48 items-center">
                     <div className="flex flex-col items-center">
                       <Link
                         to="/company/management"
@@ -171,7 +171,7 @@ const nav = () => {
                 <RiArrowDropDownLine className="inline-block ml-0 text-gray-500" />
               </span>
               {careerDropdownOpen && (
-                <div className="absolute z-10 left-0 mt-2 space-y-2 bg-[#3ABFED] text-white border rounded-lg w-48 items-center">
+                <div className="absolute z-10 left-0 mt-2 space-y-2 bg-[#3AC1EF] text-white border rounded-lg w-48 items-center">
                   <div className="flex flex-col items-center">
                     <Link
                       to="/career/career"
@@ -208,7 +208,7 @@ const nav = () => {
                 <RiArrowDropDownLine className="inline-block ml-0 text-gray-500" />
               </span>
               {servicesDropdownOpen && (
-                <div className="absolute z-10 left-0 mt-2 space-y-2 bg-[#3ABFED] text-white border rounded w-48 items-center">
+                <div className="absolute z-10 left-0 mt-2 space-y-2 bg-[#3AC1EF] text-white border rounded w-48 items-center">
                   <div className="flex flex-col items-center">
                     <Link
                       to="/services/priority"
@@ -241,7 +241,7 @@ const nav = () => {
                       Our Products
                     </Link>
                     <Link
-                      to="/projects"
+                      to="/services/projects"
                       className={` block px-4 py-2  ${
                         activeMenuItem === "projects" ? "text-[#267F93]" : ""
                       }`}

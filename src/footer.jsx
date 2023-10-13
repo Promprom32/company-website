@@ -20,7 +20,7 @@ const footer = () => {
   return (
     <div>
       <div className="bg-[#444444] text-white py-4">
-        <div className="container mx-auto flex space-x-80 justify-center items-center">
+        <div className="container mx-auto flex justify-between  gap-4 items-center">
           <div className="flex items-center p-5">
             <img
               src={BGL}
