@@ -87,16 +87,16 @@ function ContactModal({ isOpen, onClose }) {
                             <div className="flex space-x-4">
                               <input
                                 type="text"
-                                id="name"
-                                name="name"
+                                id="email"
+                                name="email"
                                 placeholder="Email"
                                 required
                                 className="bg-[#F3F3F3] outline-none w-45 h-10 px-3 border-none"
                               />
                               <input
                                 type="text"
-                                id="name"
-                                name="name"
+                                id="password"
+                                name="password"
                                 required
                                 placeholder="Password"
                                 className="bg-[#F3F3F3] outline-none w-40 h-10 px-3 border-none"
@@ -147,7 +147,7 @@ function ContactModal({ isOpen, onClose }) {
                             <AiOutlineMail />
                           </div>
                           <div>
-                            <p>info@barnksfortetech.com</p>
+                            <p>barnksfortetech@gmail.com</p>
                           </div>
                         </div>
                         <div className="flex items-center gap-6">
@@ -155,7 +155,7 @@ function ContactModal({ isOpen, onClose }) {
                             <AiOutlineWhatsApp className="text-[#F3F3F3] font-bold" />
                           </div>
                           <div className="items-center text-2l text-[#F3F3F3]">
-                            <p>09043712482</p>
+                            <p>07036889036</p>
                           </div>
                         </div>
                       </div>

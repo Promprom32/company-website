@@ -16,19 +16,19 @@ const events = () => {
   const images = [Card3, Card3, Card3]; // Add more image filenames as needed
   const imageContent = [
     {
-      heading: "touchless biometric system",
+      heading: "barnksforte staff visit to immigaration: a moment captured",
       description:
-        "we provide advanced contactless/automated biometric identification system(ABIS) used for large scale biometric identification and deduplication",
+        "in a gesture of partnership and collaboration, the dedicated team from barnksforte paid a victim to the immigration office. the interaction was marked by mutual respect and a shared committment to fostering stranger ties between both organizations. here are some snapshots from this significant encounter.",
     },
     {
-      heading: "data loss prevention",
+      heading: "barnksforte staff visit to immigaration: a moment captured",
       description:
-        "we provide a data loss prevention strategy to tackle the incidence of data compromise and data loss by mentoring, detecting and blocking unauthorised forms of data",
+        "in a gesture of partnership and collaboration, the dedicated team from barnksforte paid a victim to the immigration office. the interaction was marked by mutual respect and a shared committment to fostering stranger ties between both organizations. here are some snapshots from this significant encounter.",
     },
     {
-      heading: "network and deployment services",
+      heading: "barnksforte staff visit to immigaration: a moment captured",
       description:
-        "we provide a variety of flexible installation oferings, designed to assist you in planning and implementing either a single site and multi-site, network solution. we have the expertise to develop your network solutions for a green field application, redesigning networks or deploying existing hardware in new applications or new location.",
+        "in a gesture of partnership and collaboration, the dedicated team from barnksforte paid a victim to the immigration office. the interaction was marked by mutual respect and a shared committment to fostering stranger ties between both organizations. here are some snapshots from this significant encounter.",
     },
     {
       heading: "IT procurement services",
@@ -93,21 +93,42 @@ const events = () => {
             }`}
           >
             {/* Background color or texture */}
-            <div className="w-full h-full bg-opacity-75 absolute"></div>
+            <div className="w-full h-full  bg-opacity-75 absolute"></div>
             <img
               src={image}
               alt={`Image ${index + 1}`}
-              className="h-full w-full object-contain"
+              className="h-full w-full  object-contain"
             />
             {/* Text content */}
-            <div className="w-full h-full bg-gray-900 bg-opacity-75 absolute"></div>
-            <div className="text-white absolute md:left-1/4 md:bottom-28  mb-6 lg:block">
-              <h3 className="text-[#3AC1EF] custom-text text-3xl capitalize">
-                {imageContent[index].heading}
-              </h3>
-              <p className="text-[#fff] custom-text capitalize mt-2">
-                {imageContent[index].description}
-              </p>
+            <div className="w-full h-full bg-gray-900 bg-opacity-5 absolute"></div>
+            <div
+              className="text-white absolute  md:left-1/4 md:bottom-10  mb-6 lg:block"
+              style={{
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-end",
+                width: "100%",
+
+                // Make the text content span the entire width
+                left: "0", // Position it to the left edge
+                padding: "0",
+                bottom: "0", // Add padding for spacing
+              }}
+            >
+              <div
+                className="bg-black bg-opacity-75 p-8 top-0 left-1 right-1 rounded-md"
+                style={{
+                  width: "85rem",
+                }}
+              >
+                <h3 className="text-[#fff] font-semibold text-2xl capitalize">
+                  {imageContent[index].heading}
+                </h3>
+                <p className="text-[#fff] p-1 capitalize mt-2">
+                  {imageContent[index].description}
+                </p>
+              </div>
             </div>
           </div>
         ))}
@@ -129,11 +150,15 @@ const events = () => {
         </div>
       </div>
       <div>
-        <div className="flex   space-x-4 p-10">
-          <img src={Fruit} alt="fruit-logo" />
-          <h3 className="text-2xl capitalize text-[#636768] font-bold">
-            events
-          </h3>
+        <div className="">
+          <div
+            className="flex gap-4"
+            style={{ paddingLeft: "3rem", marginTop: "2rem" }}
+          >
+            <h3 className="text-5l capitalize text-[#636768] font-bold">
+              events
+            </h3>
+          </div>
         </div>
 
         <div className="flex justify-between gap-4 p-10">

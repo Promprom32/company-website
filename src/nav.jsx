@@ -6,18 +6,29 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import "../src/index.css";
 import ContactModal from "./contactModal";
-const nav = () => {
+import Sidebar from "./sidebar";
+
+const Nav = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [activeMenuItem, setActiveMenuItem] = useState(""); // State to track active menu item
+  const [activeMenuItem, setActiveMenuItem] = useState("");
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-  // Function to handle clicking on menu items
-  const handleMenuItemClick = (menuItem) => {
+  const [activeDropdown, setActiveDropdown] = useState(null); // Track active dropdown
+
+  const handleMenuItemClick = (menuItem, isDropdown) => {
     setActiveMenuItem(menuItem);
+    if (isDropdown) {
+      // Toggle the active dropdown
+      setActiveDropdown(activeDropdown === menuItem ? null : menuItem);
+    } else {
+      // Close the active dropdown when a non-dropdown menu item is clicked
+      setActiveDropdown(null);
+    }
   };
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
   const openContactModal = () => {
     setIsContactModalOpen(true);
   };
@@ -25,270 +36,313 @@ const nav = () => {
   const closeContactModal = () => {
     setIsContactModalOpen(false);
   };
-  // Define state variables for each dropdown
-  const [careerDropdownOpen, setCareerDropdownOpen] = useState(false);
-  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
-  const [companyDropdownOpen, setCompanyDropdownOpen] = useState(false);
+
   return (
-    <div >
+    <div>
       <div>
-        {/* Sidebar for small screens */}
         <div
-          className={`fixed top-0 h-full bg-white z-50 w-64 transform ${
+          className={`fixed top-0 h-full bg-white z-50 w-64 transform mt-10 ${
             isSidebarOpen ? "translate-x-0" : "-translate-x-full"
           } transition-transform duration-300 ease-in-out md:hidden`}
           style={{ zIndex: 51 }}
         >
-          {/* Close button */}
           <div className="flex justify-end p-2 mt-5">
             <button onClick={toggleSidebar}>
               <GrClose className="text-2xl" />
             </button>
           </div>
 
-          <div className="p-4 ml-3 text-[#717576]">
-            {/* <div className="text-center font-bold mb-4">
-          </div> */}
-            <Link to="/" className="block py-2 mt-10 ">
-              <span className="sidebar-menu-item">Home</span>
-            </Link>
-            <Link to="/about" className="block py-2 mt-4">
+          <div className="p-4 ml-3 text-[#717576] relative">
+            <div className="relative">
+              <Link
+                to="/"
+                className={`sidebar-menu-item  px-2 py-1 ${
+                  activeMenuItem === "Home" ? "text-[#3B99B7]" : ""
+                }`}
+                onClick={() => handleMenuItemClick("Home")}
+              >
+                Home
+              </Link>
+            </div>
+            <Link
+              to="/about"
+              className="block py-2 mt-4"
+            >
               <span className="sidebar-menu-item">About Us</span>
             </Link>
-            <Link to="/services" className="block py-2 mt-4 ">
-              <span className="sidebar-menu-item">Services</span>
-            </Link>
-            <Link to="/company" className="block py-2 mt-4 ">
-              <span className="sidebar-menu-item">Company</span>
-            </Link>
-            <Link to="/team" className="block py-2 mt-4 ">
-              <span className="sidebar-menu-item">Team</span>
-            </Link>
-            <button className="bg-[#267F93] text-white font-bold py-2 px-6 rounded mt-4">
+
+            {/* Company dropdown */}
+            <div className="relative">
+              <span
+                className={`cursor-pointer px-2 py-1 rounded sidebar-menu-item ${
+                  activeDropdown === "Company" ? "text-[#3B99B7]" : ""
+                }`}
+                onClick={() =>
+                  handleMenuItemClick("Company", true) // Pass true for dropdown
+                }
+              >
+                Company{" "}
+                <RiArrowDropDownLine className="inline-block ml-0 text-gray-500" />
+              </span>
+              {activeDropdown === "Company" && (
+                <div className="absolute z-10 left-0 mt-2 space-y-2 bg-[#3AC1EF] text-white border rounded-lg w-48 items-center">
+                  <Link
+                    to="/company/management"
+                    className={`block px-4 py-2 border-b ${
+                      activeMenuItem === "Management Staff"
+                        ? "text-[#267F93]"
+                        : ""
+                    }`}
+                    onClick={() => handleMenuItemClick("Management Staff")}
+                  >
+                    Management Staff
+                  </Link>
+                  <Link
+                    to="/company/boards"
+                    className={` block px-4 py-2 border-b ${
+                      activeMenuItem === "Board" ? "text-[#267F93]" : ""
+                    }`}
+                    onClick={() => handleMenuItemClick("Board")}
+                  >
+                    Board
+                  </Link>
+                  <Link
+                    to="/company/roles"
+                    className={` block px-4 py-2  border-b ${
+                      activeMenuItem === "Teams" ? "text-[#267F93]" : ""
+                    }`}
+                    onClick={() => handleMenuItemClick("Teams")}
+                  >
+                    Teams
+                  </Link>
+                  <Link
+                    to="/company/events"
+                    className={` block px-4 py-2 ${
+                      activeMenuItem === "Events" ? "text-[#267F93]" : ""
+                    }`}
+                    onClick={() => handleMenuItemClick("Events")}
+                  >
+                    Events
+                  </Link>
+                </div>
+              )}
+            </div>
+            {/* Career dropdown */}
+            <div className="relative">
+              <span
+                className={`cursor-pointer px-2 py-1 rounded sidebar-menu-item ${
+                  activeDropdown === "Careers" ? "text-[#3B99B7]" : ""
+                }`}
+                onClick={() =>
+                  handleMenuItemClick("Careers", true) // Pass true for dropdown
+                }
+              >
+                Careers{" "}
+                <RiArrowDropDownLine className="inline-block ml-0 text-gray-500" />
+              </span>
+              {activeDropdown === "Careers" && (
+                <div className="absolute z-10 left-0 mt-2 space-y-2 bg-[#3AC1EF] text-white border rounded-lg w-48 items-center">
+                  <Link
+                    to="/career/career"
+                    className={`block px-4 py-2 border-b ${
+                      activeMenuItem === "Career" ? "text-[#267F93]" : ""
+                    }`}
+                    onClick={() => handleMenuItemClick("Career")}
+                  >
+                    Career
+                  </Link>
+                  <Link
+                    to="/position"
+                    className={` block px-4 py-2  ${
+                      activeMenuItem === "Our Positions" ? "text-[#267F93]" : ""
+                    }`}
+                    onClick={() => handleMenuItemClick("Our Positions")}
+                  >
+                    Our Positions
+                  </Link>
+                </div>
+              )}
+            </div>
+            {/* Services dropdown */}
+            <div className="relative">
+              <span
+                className={`cursor-pointer px-2 py-1 rounded sidebar-menu-item ${
+                  activeDropdown === "Services" ? "text-[#3B99B7]" : ""
+                }`}
+                onClick={() =>
+                  handleMenuItemClick("Services", true) // Pass true for dropdown
+                }
+              >
+                Services{" "}
+                <RiArrowDropDownLine className="inline-block ml-0 text-gray-500" />
+              </span>
+              {activeDropdown === "Services" && (
+                <div className="absolute z-10 left-0 mt-2 space-y-2 bg-[#3AC1EF] text-white border rounded w-48 items-center">
+                  <Link
+                    to="/services/priority"
+                    className={`block px-4 py-2 border-b ${
+                      activeMenuItem === "What We Do" ? "text-[#267F93]" : ""
+                    }`}
+                    onClick={() => handleMenuItemClick("What We Do")}
+                  >
+                    What We Do
+                  </Link>
+                  <Link
+                    to="/services/enterprise"
+                    className={` block px-4 py-2 border-b ${
+                      activeMenuItem === "Enterprise System" ? "text-[#267F93]" : ""
+                    }`}
+                    onClick={() => handleMenuItemClick("Enterprise System")}
+                  >
+                    Enterprise System
+                  </Link>
+                  <Link
+                    to="/services/products"
+                    className={` block px-4 py-2 border-b ${
+                      activeMenuItem === "Our Products" ? "text-[#267F93]" : ""
+                    }`}
+                    onClick={() => handleMenuItemClick("Our Products")}
+                  >
+                    Our Products
+                  </Link>
+                  <Link
+                    to="/services/projects"
+                    className={` block px-4 py-2 ${
+                      activeMenuItem === "Our Projects" ? "text-[#267F93]" : ""
+                    }`}
+                    onClick={() => handleMenuItemClick("Our Projects")}
+                  >
+                    Our Projects
+                  </Link>
+                </div>
+              )}
+            </div>
+            <button
+              className="bg-[#3B99B7] text-white font-bold py-2 px-6 rounded mt-4"
+              onClick={openContactModal}
+            >
               Contact Us
             </button>
           </div>
         </div>
 
-        {/* Main navigation bar */}
         <div
           className="fixed top-0 left-0 right-0 z-50 pl-10 w-full bg-white items-center flex justify-between p-4 "
-          style={{ zIndex: 9999, height:"60px" }}
+          style={{ zIndex: 9999, height: "60px" }}
         >
           <div className="flex-shrink-0">
-            <img src={BGL} alt="barnksforte" className="h-16 w-50 object-contain" />
+            <img
+              src={BGL}
+              alt="barnksforte"
+              className="h-16 w-50 object-contain"
+            />
           </div>
           <div
-            className={`hidden md:flex space-x-9 justify-center font-semibold text-[#717576] ${
+            className={`hidden md:flex space-x-9 justify-center  text-[#717576]  ${
               isSidebarOpen ? "md:hidden" : ""
             }`}
           >
             <div className="flex space-x-8">
               <Link
                 to="/"
-                className={`${
-                  activeMenuItem === "Home" ? "text-[#267F93]" : ""
-                }`}
+                className={`${activeMenuItem === "Home" ? "text-[#3AC1EF]" : ""}`}
                 onClick={() => handleMenuItemClick("Home")}
               >
                 Home
               </Link>
-              <Link
-                to="/about"
-                className={`${
-                  activeMenuItem === "About Us" ? "text-[#267F93]" : ""
-                }`}
-                onClick={() => handleMenuItemClick("About Us")}
-              >
+              <Link to="/about" className={`${activeMenuItem === "About Us" ? "text-[#3AC1EF]" : ""}`} onClick={() => handleMenuItemClick("About Us")}>
                 About Us
               </Link>
-              {/* company logic */}
               <div className="relative">
                 <span
                   className={`cursor-pointer px-2 py-1 rounded ${
-                    companyDropdownOpen ? "" : ""
+                    activeDropdown === "Company" ? "text-[#3AC1EF]" : ""
                   }`}
-                  onClick={() => setCompanyDropdownOpen(!companyDropdownOpen)}
+                  onClick={() => handleMenuItemClick("Company", true)}
                 >
                   Company{" "}
                   <RiArrowDropDownLine className="inline-block ml-0 text-gray-500" />
                 </span>
-                {companyDropdownOpen && (
+                {activeDropdown === "Company" && (
                   <div className="absolute z-10 left-0 mt-2 space-y-2 bg-[#3AC1EF] text-white border rounded-lg w-48 items-center">
-                    <div className="flex flex-col items-center">
-                      <Link
-                        to="/company/management"
-                        className={` block px-4 py-2 border-b  ${
-                          activeMenuItem === "management"
-                            ? "text-[#267F93]"
-                            : ""
-                        }`}
-                        onClick={() => handleMenuItemClick("management")}
-                      >
-                        Management Staff
-                      </Link>
-                      <Link
-                        to="/company/boards"
-                        className={` block px-4 py-2 border-b  ${
-                          activeMenuItem === "board" ? "text-[#267F93]" : ""
-                        }`}
-                        onClick={() => handleMenuItemClick("board")}
-                      >
-                        Board
-                      </Link>
-
-                      <Link
-                        to="/company/roles"
-                        className={` block px-4 py-2  border-b ${
-                          activeMenuItem === "teams" ? "text-[#267F93]" : ""
-                        }`}
-                        onClick={() => handleMenuItemClick("Teams")}
-                      >
-                        Teams
-                      </Link>
-                      <Link
-                        to="/company/events"
-                        className={` block px-4 py-2 ${
-                          activeMenuItem === "events" ? "text-[#267F93]" : ""
-                        }`}
-                        onClick={() => handleMenuItemClick("events")}
-                      >
-                        Events
-                      </Link>
-                    </div>
+                    <Link to="/company/boards" className={` block px-4 py-2 border-b  ${activeMenuItem === "Board" ? "text-[#2783A1]" : ""}`} onClick={() => handleMenuItemClick("Management Staff")}>
+                      Board
+                    </Link>
+                    <Link to="/company/management" className={` block px-4 py-2 border-b  ${activeMenuItem === "Management" ? "text-[#2783A1]" : ""}`} onClick={() => handleMenuItemClick("Board")}>
+                      Management
+                    </Link>
+                    <Link to="/company/roles" className={` block px-4 py-2  border-b ${activeMenuItem === "Team" ? "text-[#2783A1]" : ""}`} onClick={() => handleMenuItemClick("Teams")}>
+                      Team
+                    </Link>
+                    <Link to="/company/events" className={` block px-4 py-2 ${activeMenuItem === "Events" ? "text-[#2783A1]" : ""}`} onClick={() => handleMenuItemClick("Events")}>
+                      Events
+                    </Link>
                   </div>
                 )}
               </div>
             </div>
-            <div className="relative">
+            <div className="relative text-2l">
               <span
                 className={`cursor-pointer px-2 py-1 rounded ${
-                  careerDropdownOpen ? "" : ""
+                  activeDropdown === "Careers" ? "text-[#3AC1EF]" : ""
                 }`}
-                onClick={() => setCareerDropdownOpen(!careerDropdownOpen)}
+                onClick={() => handleMenuItemClick("Careers", true)}
               >
                 Careers{" "}
                 <RiArrowDropDownLine className="inline-block ml-0 text-gray-500" />
               </span>
-              {careerDropdownOpen && (
+              {activeDropdown === "Careers" && (
                 <div className="absolute z-10 left-0 mt-2 space-y-2 bg-[#3AC1EF] text-white border rounded-lg w-48 items-center">
-                  <div className="flex flex-col items-center">
-                    <Link
-                      to="/career/career"
-                      className={` block px-4 py-2 border-b ${
-                        activeMenuItem === "career" ? "text-[#267F93]" : ""
-                      }`}
-                      onClick={() => handleMenuItemClick("career")}
-                    >
-                      Career
-                    </Link>
-                    <Link
-                      to="/position"
-                      className={` block px-4 py-2  ${
-                        activeMenuItem === "positions" ? "text-[#267F93]" : ""
-                      }`}
-                      onClick={() => handleMenuItemClick("positions")}
-                    >
-                      Our Positions
-                    </Link>
-                  </div>
+                  <Link to="/career/career" className={` block px-4 py-2 border-b ${activeMenuItem === "Career" ? "text-[#267F93]" : ""}`} onClick={() => handleMenuItemClick("Career")}>
+                    Career
+                  </Link>
+                  <Link to="/position" className={` block px-4 py-2  ${activeMenuItem === "Our Positions" ? "text-[#267F93]" : ""}`} onClick={() => handleMenuItemClick("Our Positions")}>
+                    Our Positions
+                  </Link>
                 </div>
               )}
             </div>
-
-            {/* Define similar logic for other menu items */}
             <div className="relative">
               <span
                 className={`cursor-pointer px-2 py-1 rounded ${
-                  servicesDropdownOpen ? "" : ""
+                  activeDropdown === "Services" ? "text-[#3AC1EF]" : ""
                 }`}
-                onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+                onClick={() => handleMenuItemClick("Services", true)}
               >
                 Services{" "}
                 <RiArrowDropDownLine className="inline-block ml-0 text-gray-500" />
               </span>
-              {servicesDropdownOpen && (
+              {activeDropdown === "Services" && (
                 <div className="absolute z-10 left-0 mt-2 space-y-2 bg-[#3AC1EF] text-white border rounded w-48 items-center">
-                  <div className="flex flex-col items-center">
-                    <Link
-                      to="/services/priority"
-                      className={` block px-4 py-2 border-b ${
-                        activeMenuItem === "priority" ? "text-[#267F93]" : ""
-                      }`}
-                      onClick={() => handleMenuItemClick("priority")}
-                    >
-                      What We Do
-                    </Link>
-
-                    <Link
-                      to="/services/enterprise"
-                      className={` block px-4 py-2 border-b ${
-                        activeMenuItem === "enterprise system"
-                          ? "text-[#267F93]"
-                          : ""
-                      }`}
-                      onClick={() => handleMenuItemClick("Enterprise System")}
-                    >
-                      Enterprise System
-                    </Link>
-                    <Link
-                      to="/services/products"
-                      className={` block px-4 py-2 border-b ${
-                        activeMenuItem === "products" ? "text-[#267F93]" : ""
-                      }`}
-                      onClick={() => handleMenuItemClick("products")}
-                    >
-                      Our Products
-                    </Link>
-                    <Link
-                      to="/services/projects"
-                      className={` block px-4 py-2  ${
-                        activeMenuItem === "projects" ? "text-[#267F93]" : ""
-                      }`}
-                      onClick={() => handleMenuItemClick("projects")}
-                    >
-                      Our Projects
-                    </Link>
-                  </div>
+                  <Link to="/services/priority" className={` block px-4 py-2 border-b ${activeMenuItem === "What We Do" ? "text-[#267F93]" : ""}`} onClick={() => handleMenuItemClick("What We Do")}>
+                    What We Do
+                  </Link>
+                  <Link to="/services/enterprise" className={` block px-4 py-2 border-b ${activeMenuItem === "Enterprise System" ? "text-[#3AC1EF]" : ""}`} onClick={() => handleMenuItemClick("Enterprise System")}>
+                    Enterprise System
+                  </Link>
+                  <Link to="/services/products" className={` block px-4 py-2 border-b ${activeMenuItem === "Our Products" ? "text-[#3AC1EF]" : ""}`} onClick={() => handleMenuItemClick("Our Products")}>
+                    Our Products
+                  </Link>
+                  <Link to="/services/projects" className={` block px-4 py-2 ${activeMenuItem === "Our Projects" ? "text-[#3AC1EF" : ""}`} onClick={() => handleMenuItemClick("Our Projects")}>
+                    Our Projects
+                  </Link>
                 </div>
               )}
             </div>
           </div>
-          {/* "Contact Us" button visible only on large screens */}
-          <div
-            className={`pr-10 mr-4 hidden md:block  ${
-              isSidebarOpen ? "block" : "hidden"
-            }`}
-          >
-            <div
-              className={`pr-10 mr-4 hidden md:block ${
-                isSidebarOpen ? "block" : "hidden"
-              }`}
-            >
-              <button
-                className="bg-[#2C2E2E] text-[#fff] shadow-2xl font-bold py-2 px-6 rounded"
-                onClick={openContactModal}
-              >
-                Contact Us
-              </button>
-            </div>
+          <div className={`pr-10 mr-4 hidden md:block  ${isSidebarOpen ? "block" : "hidden"}`}>
+            <button className="bg-[#2C2E2E] text-[#fff] shadow-2xl font-bold py-2 px-6 rounded" onClick={openContactModal}>
+              Contact Us
+            </button>
           </div>
-          {/* Mobile view div */}
-          <div
-            className={`md:hidden mt-2 text-3xl cursor-pointer`}
-            onClick={toggleSidebar}
-          >
+          <div className={`md:hidden mt-2 text-3xl cursor-pointer`} onClick={toggleSidebar}>
             <GiHamburgerMenu />
           </div>
-          {/* Render the ContactModal */}
-          <ContactModal
-            isOpen={isContactModalOpen}
-            onClose={closeContactModal}
-          />
+          <ContactModal isOpen={isContactModalOpen} onClose={closeContactModal} />
         </div>
       </div>
     </div>
   );
 };
 
-export default nav;
+export default Nav;

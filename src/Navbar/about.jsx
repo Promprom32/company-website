@@ -15,6 +15,7 @@ import img16 from "../assets/img16.png";
 import img17 from "../assets/img17.png";
 import img18 from "../assets/img18.png";
 import Testimony from "../testimony";
+import Testimonial from "../testimonial";
 import "../../src/index.css";
 import { Link } from "react-router-dom";
 const about = () => {
@@ -30,7 +31,7 @@ const about = () => {
     <div>
       <Nav />
       <div>
-        <img src={BG} alt="group photo" className="object-contain mt-10" />
+        <img src={BG} alt="group photo" className="object-contain mt-4" />
       </div>
       <div>
         <div className="flex justify-center space-x-4 font-semibold text-3xl mt-10">
@@ -93,7 +94,8 @@ const about = () => {
           <h2 className="text-[#2D2B2B]"> What Our Clients Say About Us</h2>
         </div>
         <div className="container justify-center p-4 mt-5">
-          <Testimony testimonials={testimonials} className="custom-text" />
+          <Testimonial />
+          {/* <Testimony testimonials={testimonials} className="custom-text" /> */}
         </div>
       </div>
 

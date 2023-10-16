@@ -6,6 +6,7 @@ import Internet from "./assets/internet.png";
 import Lock from "./assets/lock.png";
 import { Link } from "react-router-dom";
 import { GrLinkNext } from "react-icons/gr";
+import "../src/index.css";
 import "./index.css";
 const creative = () => {
   return (
@@ -13,10 +14,10 @@ const creative = () => {
       <div className="bg-white w-full h-full">
         <div className="flex justify-center space-x-4 font-semibold text-5xl mt-20">
           <img src={Fruit} alt="fruit logo" className="object-contain w-15" />
-          <h2 className="text-[#34889A]"> Our Creative Value</h2>
+          <h2 className="text-[#2C2E2E]"> Our Creative Value</h2>
         </div>
         <div className="text-center text-[#717576]">
-          <p className="text-2l capitalize mt-2">
+          <p className="text-2l capitalize mt-2 ">
             we offer development solutions in africa and intentionally. we are a
             purpose driven <br />
             organisations with products and services,
@@ -29,11 +30,11 @@ const creative = () => {
             <div className="p-6  rounded-full border shadow-2xl bg-[#319650]">
               <img src={Coding} alt="coding image" className="" />
             </div>
-            <h2 className="capitalize text-[#267F93] font-semibold text-1xl mt-2">
+            <h2 className="capitalize text-[#2C2E2E] font-semibold text-1xl mt-2">
               software development, <br />
               implementation & <br /> management
             </h2>
-            <p className="text-[#7E909E] capitalize text-1l font-semibold mt-2">
+            <p className="text-[#7E909E] capitalize text-1l font-semibold mt-2 custom-text">
               We apply cutting-edge <br />
               techniques to ensure our <br /> products are delivered
               efficiently, <br /> effectively and satisfactorily.
@@ -41,14 +42,14 @@ const creative = () => {
           </div>
 
           <div className="flex flex-col items-center mt-7  w-full md:w-1/2 lg:w-1/5">
-            <div className="p-6 rounded-full border shadow-2xl bg-[#057FA6]">
+            <div className="p-6 rounded-full border shadow-2xl bg-[#3B99B7]">
               <img src={Bio} alt="biometrics" />
             </div>
-            <h2 className="capitalize text-[#267F93] font-semibold text-1xl mt-4">
+            <h2 className="capitalize text-[#2C2E2E] font-semibold text-1xl mt-4">
               {" "}
               touchless biometric system
             </h2>
-            <p className="text-[#7E909E] capitalize text-1l font-semibold mt-2">
+            <p className="text-[#7E909E] capitalize text-1l font-semibold mt-2 custom-text">
               We provide advanced <br />
               Automated Biometric <br /> Identification System used for <br />{" "}
               large-scale biometric <br /> identification and <br />
@@ -59,10 +60,10 @@ const creative = () => {
             <div className="p-6 rounded-full border shadow-2xl bg-[#FA4343] ">
               <img src={Lock} alt="lock" />
             </div>
-            <h2 className="capitalize text-[#267F93] font-semibold text-1xl mt-2">
+            <h2 className="capitalize text-[#2C2E2E] font-semibold text-1xl mt-2">
               data loss prevention
             </h2>
-            <p className="text-[#7E909E] capitalize text-1l font-semibold mt-2">
+            <p className="text-[#7E909E] capitalize text-1l font-semibold mt-2 custom-text">
               We provide strategic solutions <br /> through our well researched{" "}
               <br /> and development partnership <br /> company to monitor,
               detect, <br /> and block the unauthorized <br />
@@ -73,10 +74,10 @@ const creative = () => {
             <div className="p-6 rounded-full border shadow-2xl bg-[#BE9D16]">
               <img src={Internet} alt="internet" />
             </div>
-            <h2 className="capitalize font-semibold text-1xl text-[#267F93] mt-2">
+            <h2 className="capitalize font-semibold text-1xl text-[#2C2E2E] mt-2">
               network and deployment services
             </h2>
-            <p className="text-[#7E909E] capitalize text-1l font-semibold mt-2">
+            <p className="text-[#7E909E] capitalize text-1l font-semibold mt-2 custom-text">
               We provide a variety of <br />
               flexible installation offerings,
               <br /> designed to assist you in <br />

@@ -7,6 +7,7 @@ import Geono from "./assets/geo.png";
 import Tiqit from "./assets/tiq.png";
 import Quid from "./assets/quid.png";
 import Longtext from "./longtext";
+import "../src/index.css";
 const products = () => {
   const longText =
     "Verxid is an approved proprietary end-to-end, highly secure touchless biometric software of BTL integrated into approved smartphones to enhance and offer multi-factor biometrics capture and authentication. It can serve as a self-service touchless biometric solution that can unify systems seamlessly as an Authentication Call to Action means. This secured platform only allows the biometric process to run on the smart-mobile device and delivers the captured or authenticated data to the premised or cloud server. Thus, Verxid brings this simplified, realistic, and operational progression to people from the comfort of any location and provides the most secure, high-performing process of capturing a high volume of users more quickly. Verxid is viable for any use case interface that requires identification and only requires a low-end camera with a flash or torch to capture the user's ten fingerprints and face. Some use case for Verxid include Pensioners, Civil Personnel, Resident Card, Criminal Data Base, Road-Safety, Education, and many more that needs identification process.";
@@ -25,7 +26,7 @@ const products = () => {
         </h3>
       </div>
       <div className="">
-        <div className="flex p-24 space-x-14">
+        <div className="flex p-24 space-x-14 card">
           <div>
             <img
               src={Verxid}
@@ -37,7 +38,7 @@ const products = () => {
             <Longtext text={longText} maxLength={maxLength} />
             <div className="items-center">
               <Link
-                className="bg-[#3AC1EF] text-[#fff] shadow-2xl font-bold py-3 px-4 items-center rounded-full mt-2 ml-10"
+                className="bg-[#fff] text-[#3AC1EF] border-[#3AC1EF]  border-2 shadow-5xl font-bold py-3 px-4 items-center mt-2 ml-10 rounded-full"
                 to="https://www.verxid.com"
               >
                 Learn More
@@ -45,7 +46,7 @@ const products = () => {
             </div>
           </div>
         </div>
-        <div className="flex p-24 space-x-14">
+        <div className="flex p-24 space-x-14 card">
           <div>
             <img
               src={Geono}
@@ -74,7 +75,7 @@ const products = () => {
             </div>
             <div className="items-center">
               <Link
-                className="bg-[#3AC1EF] text-[#fff] shadow-2xl font-bold py-3 px-4 items-center rounded-full mt-2 ml-10"
+                className="bg-[#fff] text-[#3AC1EF] border-[#3AC1EF]  border-2 shadow-5xl font-bold py-3 px-4 items-center mt-2 ml-10 rounded-full"
                 to="https://www.geonotifeye.com"
               >
                 Learn More
@@ -82,7 +83,7 @@ const products = () => {
             </div>
           </div>
         </div>
-        <div className="flex p-24 space-x-14">
+        <div className="flex p-24 space-x-14 card">
           <div>
             <img
               src={Tiqit}
@@ -112,7 +113,7 @@ const products = () => {
             </div>
             <div className="items-center">
               <Link
-                className="bg-[#3AC1EF] text-[#fff] shadow-2xl font-bold py-3 px-4 items-center rounded-full mt-2 ml-10"
+                className="bg-[#fff] text-[#3AC1EF] border-[#3AC1EF]  border-2 shadow-5xl font-bold py-3 px-4 items-center mt-2 ml-10 rounded-full"
                 to="https://www.verxid.com"
               >
                 Learn More
@@ -120,7 +121,7 @@ const products = () => {
             </div>
           </div>
         </div>
-        <div className="flex p-24 space-x-14">
+        <div className="flex p-24 space-x-14 card">
           <div>
             <img
               src={Tiqit}
@@ -144,10 +145,7 @@ const products = () => {
               </p>
             </div>
             <div className="items-center">
-              <Link
-                className="bg-[#3AC1EF] text-[#fff] shadow-2xl font-bold py-3 px-4 items-center rounded-full mt-2 ml-10"
-                to="https://www.verxid.com"
-              >
+              <Link className="bg-[#fff] text-[#3AC1EF] border-[#3AC1EF]  border-2 shadow-5xl font-bold py-3 px-4 items-center mt-2 ml-10 rounded-full">
                 Learn More
               </Link>
             </div>

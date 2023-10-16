@@ -56,7 +56,7 @@ const Carousel = () => {
             <div className=" top-0 absolute md:top-1/2 md:left-1/2 md:transform md:-translate-y-1/2 py-4 px-4">
               <h1 className="sm:text-1xl md:text-4xl ">
                 <span
-                  className="bg-[#2783A1] text-5xl font-semibold py-5 px-6 sm:text-1xl  text-white"
+                  className="bg-[#3B99B7] text-5xl  py-5 px-6 sm:text-1xl  text-white"
                   style={{ letterSpacing: "0.3rem" }}
                 >
                   BARNKSFORTE
@@ -64,21 +64,21 @@ const Carousel = () => {
               </h1>
               <p>
                 <span
-                  className="flex flex-col text-5xl font-semibold py-4 px-3 sm:text-1xl ml-3 uppercase text-white"
-                  style={{ letterSpacing: "0.3rem", marginTop:"0.3rem" }}
+                  className="flex flex-col text-5xl  py-4 px-3 sm-text-1xl ml-3 uppercase text-white"
+                  style={{ letterSpacing: "0.3rem", marginTop:"0.5rem" }}
                 >
                   technologies
                 </span>{" "}
               </p>
               <p>
                 <span
-                  className="flex flex-col text-5xl font-semibold py-4 px-3 sm:text-1xl ml-4 mb-2 uppercase text-white"
+                  className="flex flex-col text-5xl  py-4 px-3 sm:text-1xl ml-4 mb-2 uppercase text-white"
                   style={{ letterSpacing: "0.3rem" }}
                 >
                   limited
                 </span>{" "}
               </p>
-              <p className="text-lg md:text-xl lg:text-2xl text-[#2B85A1] ml-7 font-semibold flex flex-col">
+              <p className="text-lg md:text-xl lg:text-2xl text-[#3B99B7] ml-7 font-semibold flex flex-col">
                 Your Reliable Solution Partner
               </p>
               <div className="flex justify-left space-x-4 md:space-x-2 mt-4 ml-6">

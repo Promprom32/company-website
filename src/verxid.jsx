@@ -18,7 +18,7 @@ function ImageCarousel() {
       <div className="bg-white w-full h-full">
         <div className="flex justify-center space-x-4 font-semibold text-5xl mt-20">
           <img src={Fruit} alt="fruit logo" className="object-contain w-15" />
-          <h2 className="text-[#606262] font-semibold text-3xl capitalize">
+          <h2 className="text-[#2C2E2E] font-semibold text-3xl capitalize">
             {" "}
             our product
           </h2>
@@ -27,7 +27,7 @@ function ImageCarousel() {
           <div className="flex items-center">
             <img src={Verxid} alt="verxid image" className="p-5" />
           </div>
-          <div className="text-center mt-5 text-[#767A7A] text-1xl capitalize">
+          <div className="text-center mt-5 text-[#2C2E2E] text-1xl capitalize">
             <p className="custom-text">
               Verxid is a proprietary end to end highly secured, innovative
               touchless biometric infrastructure that can be integrated into
@@ -41,7 +41,7 @@ function ImageCarousel() {
       </div>
       <div className="flex justify-center mt-3">
         <div className="flex border-2 border-[#3AC1EF] items-center rounded-full shadow-1xl bg-[#fff] p-4 mt-2 text-[#3BBFEC] font-semibold font-1l space-x-1">
-          <Link to="/products">View More</Link>
+          <Link to="/services/products">View More</Link>
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"

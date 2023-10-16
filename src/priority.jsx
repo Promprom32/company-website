@@ -7,6 +7,7 @@ import Services5 from "./assets/services5.png";
 import Footer from "./footer";
 import Nav from "./nav";
 import "../src/index.css";
+import Swip from "./swiper";
 import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from "react-icons/ai";
 const Priority = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

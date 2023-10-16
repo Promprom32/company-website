@@ -19,7 +19,7 @@ const enterprise = () => {
         </h3>
       </div>
       <div>
-        <div className="flex p-24 space-y-4 space-x-14">
+        <div className="flex p-24 space-y-4 space-x-14 card">
           <div>
             <img
               src={Smart}
@@ -42,7 +42,7 @@ const enterprise = () => {
           </div>
         </div>
 
-        <div className="flex p-24 mb-5 space-y-4 space-x-14">
+        <div className="flex p-24 mb-5 space-y-4 space-x-14 card">
           <div>
             <img
               src={Bio}
@@ -63,7 +63,7 @@ const enterprise = () => {
           </div>
         </div>
 
-        <div className="flex p-24 mb-5 space-y-4 space-x-14">
+        <div className="flex p-24 mb-5 space-y-4 space-x-14 card">
           <div>
             <img
               src={Doc}
@@ -85,7 +85,7 @@ const enterprise = () => {
           </div>
         </div>
 
-        <div className="flex p-24 mb-5 space-y-4 space-x-14">
+        <div className="flex p-24 mb-5 space-y-4 space-x-14 card">
           <div>
             <img
               src={Payroll}
