@@ -27,34 +27,34 @@ export default function App() {
           modules={[Pagination, Navigation, HashNavigation]}
           className="mySwiper"
         >
-          <SwiperSlide data-hash="slide1" className="swiper-slide">
+          <SwiperSlide data-hash="slide1" className="swiper-slide ">
             "working with barnksforte technologies limited has been a game
-            changer for us.their innovative solutions and attention to details
-            have helped us achieve our goals faster than we have ever imagined.
+            changer for us. <br />their innovative solutions and attention to details
+            have helped us achieve our <br /> goals faster than we have ever imagined.
           </SwiperSlide>
           <SwiperSlide data-hash="slide2">
             {" "}
             "working with barnksforte technologies limited has been a game
-            changer for us.their innovative solutions and attention to details
-            have helped us achieve our goals faster than we have ever imagined.
+            changer for us. <br />their innovative solutions and attention to details
+            have helped us achieve our <br /> goals faster than we have ever imagined.
           </SwiperSlide>
           <SwiperSlide data-hash="slide3">
             {" "}
             "working with barnksforte technologies limited has been a game
-            changer for us.their innovative solutions and attention to details
-            have helped us achieve our goals faster than we have ever imagined.
+            changer for us. <br />their innovative solutions and attention to details
+            have helped us achieve our  <br />goals faster than we have ever imagined.
           </SwiperSlide>
           <SwiperSlide data-hash="slide4">
             {" "}
             "working with barnksforte technologies limited has been a game
-            changer for us.their innovative solutions and attention to details
-            have helped us achieve our goals faster than we have ever imagined.
+            changer for us. <br />their innovative solutions and attention to details
+            have helped us achieve our <br /> goals faster than we have ever imagined.
           </SwiperSlide>
           <SwiperSlide data-hash="slide5">
             {" "}
             "working with barnksforte technologies limited has been a game
-            changer for us.their innovative solutions and attention to details
-            have helped us achieve our goals faster than we have ever imagined.
+            changer for us. <br />their innovative solutions and attention to details
+            have helped us achieve our  <br />goals faster than we have ever imagined.
           </SwiperSlide>
         </Swiper>
       </div>

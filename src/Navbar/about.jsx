@@ -91,7 +91,7 @@ const about = () => {
       <div>
         <div className="flex justify-center space-x-4 font-semibold text-3xl">
           <img src={Fruit} alt="fruit logo" className="object-contain w-15" />
-          <h2 className="text-[#2D2B2B]"> What Our Clients Say About Us</h2>
+          <h2 className="text-[#2D2B2B] mt-5"> What Our Clients Say About Us</h2>
         </div>
         <div className="container justify-center p-4 mt-5">
           <Testimonial />

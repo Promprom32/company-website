@@ -24,7 +24,7 @@ const career = () => {
               are you prepared to embark on your adventure with barnksforte?
             </h3>
             <p className="text-[#3AC1EF] text-2xl capitalize">
-              we welcome to join us
+              we welcome  you to join us
             </p>
           </div>
 
