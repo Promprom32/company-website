@@ -143,12 +143,9 @@ const Boards = () => {
                   maxLength={400}
                 />
               </div>
-             
             </div>
           </div>
         </div>
-       
-       
       </div>
       <Footer />
     </div>
